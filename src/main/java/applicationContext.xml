@@ -6,6 +6,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- load properties file -->
+    <context:property-placeholder location="classpath:sport.properties"/>
 
 	<bean id="myFortuneService"
 		class="ch.jfriedli.springdemo.springdemoone.HappyFortuneService">
@@ -15,18 +18,13 @@
 		class="ch.jfriedli.springdemo.springdemoone.TrackCoach">
 		<constructor-arg ref="myFortuneService" />
 	</bean>
-<!--  
-	<bean id="myCricketCoach"
-		class="ch.jfriedli.springdemo.springdemoone.TrackCoach">
-		<constructor-arg ref="myFortuneService" />
-	</bean>
--->
+
 	<bean id="myCricketCoach"
 		class="ch.jfriedli.springdemo.springdemoone.CricketCoach">
 		<property name="fortuneService" ref="myFortuneService" />
 		
-		<property name="emailAddress" value="jonas.friedli@example.ch" />
-		<property name="team" value="CIC" />
+		<property name="emailAddress" value="${coach.email}" />
+		<property name="team" value="${coach.team}" />
 	</bean>
 
 	<!-- <bean id="myCoach" class="ch.jfriedli.springdemo.springdemoone.BaseballCoach"> 
