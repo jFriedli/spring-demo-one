@@ -20,6 +20,9 @@ public class App
 		// call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
 		
+		// try out dependency injection
+		System.out.println(theCoach.getDailyFortune());
+		
 		// close the context
 		context.close();
     }
