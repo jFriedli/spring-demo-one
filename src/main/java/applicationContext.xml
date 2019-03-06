@@ -24,6 +24,9 @@
 	<bean id="myCricketCoach"
 		class="ch.jfriedli.springdemo.springdemoone.CricketCoach">
 		<property name="fortuneService" ref="myFortuneService" />
+		
+		<property name="emailAddress" value="jonas.friedli@example.ch" />
+		<property name="team" value="CIC" />
 	</bean>
 
 	<!-- <bean id="myCoach" class="ch.jfriedli.springdemo.springdemoone.BaseballCoach"> 

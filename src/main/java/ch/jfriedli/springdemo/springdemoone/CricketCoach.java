@@ -4,6 +4,9 @@ public class CricketCoach implements Coach {
 	
 	private FortuneService fortuneService;
 	
+	private String emailAddress;
+	private String team;
+	
 	public CricketCoach() {
 		System.out.println("CricketCoach contructed");
 	}
@@ -19,8 +22,26 @@ public class CricketCoach implements Coach {
 	}
 
 	public void setFortuneService(FortuneService fortuneService) {
-		System.out.println("Set FortuneService on CricketCoach");
+		System.out.println("CricketCoach: Set FortuneService");
 		this.fortuneService = fortuneService;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+		System.out.println("CricketCoach: Set Email Address");
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+		System.out.println("CricketCoach: Set Team");
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public String getTeam() {
+		return team;
 	}
 	
 	
